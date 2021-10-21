@@ -90,6 +90,18 @@ section {
     transition: ease 0.3s all;
 }
 
+.btn-add-section{
+    background-color: #11afc4;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 25px 2px 4px 2px;
+    cursor: pointer;
+}
 /* Header Styles */
 .page__header {
     background: #fff;
@@ -123,6 +135,7 @@ section {
         max-width: 50em;
         padding: 4em;
     }
+   
 }
 
 section:nth-of-type(even) .landing__container {
@@ -196,8 +209,8 @@ section:nth-of-type(3n + 1) .landing__container::after {
 /* Section Active Styles */
 /* Note: your-active-class class is applied through javascript. You should update the class here and in the index.html to what you set in your javascript file.  */
 section.your-active-class {
-    background: rgb(0, 0, 0);
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0) 100%);
+    background: rgba(108 30 121 0.5);
+    background: linear-gradient(0deg, rgba(177, 21, 130, 0.1) 0%, rgba(58, 12, 50, 0) 100%);
 }
 
 section.your-active-class .landing__container::before {
