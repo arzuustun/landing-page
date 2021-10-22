@@ -1,4 +1,4 @@
-const sections = document.querySelectorAll("section");
+
 let counter=0;
 function createSections(){
     counter++;
@@ -12,8 +12,10 @@ function createSections(){
     </section>`;
     document.querySelector('main').insertAdjacentHTML('beforeend',section);
 }
+
 for (let i=1; i<5; i++){
     createSections();
+   
 }
 
 createNavBarItem();
@@ -38,20 +40,21 @@ function isInViewport(el) {
     const rect = el.getBoundingClientRect();
     return (
         rect.top >= 0 &&
-        rect.left >= 0 
+        rect.left >= 0 &&
+        rect.top <=window.innerHeight &&
+        rect.bottom <=window.innerHeight +100
 
     );
 }
 
 document.addEventListener('scroll', function () {
-    document.querySelectorAll("section").forEach(function(box){
-        console.log(' isInViewport(box)', isInViewport(box));
-        if( isInViewport(box)) 
-        box.classList.add('your-active-class');
-        else
-        box.classList.remove('your-active-class');
-
-    });
+    let sections = document.querySelectorAll("section");
+    sections.forEach(function(box){
+            if( isInViewport(box)) 
+            box.classList.add('your-active-class');
+            else
+            box.classList.remove('your-active-class');
+        });
 });
 
 /**
