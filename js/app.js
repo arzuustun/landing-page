@@ -37,12 +37,19 @@ function createNavBarItem(){
  }
  
 function isInViewport(el) {
+    console.log(el);
     const rect = el.getBoundingClientRect();
+    console.log('bottom',rect.bottom);
+    console.log('right',rect.right);
+    console.log('top',rect.top);
+    console.log('left',rect.left);
+    console.log('el.clientHeight',el.clientHeight);
+    console.log('el.clientWidth',el.clientWidth);
     return (
         rect.top >= 0 &&
         rect.left >= 0 &&
-        rect.top <=window.innerHeight &&
-        rect.bottom <=window.innerHeight +100
+        rect.top <=window.innerHeight  &&
+        rect.bottom <=window.innerHeight || rect.bottom<= el.clientHeight+1
 
     );
 }
